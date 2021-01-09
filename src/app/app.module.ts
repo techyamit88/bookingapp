@@ -1,10 +1,17 @@
 import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { NgModule, CUSTOM_ELEMENTS_SCHEMA } from '@angular/core';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatButtonModule} from '@angular/material/button';
+import {MatIconModule} from '@angular/material/icon';
+import {MatCard, MatCardModule} from '@angular/material/card';
+import { AngularMaterialModule } from './material.module';
+
+
+
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MaterialModule} from './material.module';
 import { AccomodationComponent } from './accomodation/accomodation.component';
 import { FoodBeverageComponent } from './food-beverage/food-beverage.component';
 import { LifestyleComponent } from './Lifestyle/Lifestyle.component';
@@ -17,6 +24,11 @@ import { HomeComponent } from './Home/Home.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { NavtabsComponent } from './navigation/navtabs/navtabs.component';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
+import {SignInComponent} from './Auth/SignIn/SignIn.component';
+import {SignUpComponent} from './Auth/SignUp/SignUp.component';
+
 
 @NgModule({
   declarations: [
@@ -31,16 +43,27 @@ import { NavtabsComponent } from './navigation/navtabs/navtabs.component';
       HomeComponent,
       HeaderComponent,
       SidenavListComponent,
-      NavtabsComponent
+      NavtabsComponent,
+      SignInComponent,
+      SignUpComponent
    ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    MaterialModule,
     AppRoutingModule,
-    FlexLayoutModule
+    FlexLayoutModule,
+    ReactiveFormsModule,
+    MatNativeDateModule,
+    MatToolbarModule,
+    MatButtonModule,
+    MatIconModule,
+    MatCardModule,
+    AngularMaterialModule
+
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+
 })
 export class AppModule { }

@@ -1,3 +1,24 @@
-<p>
-  SignUp works!
-</p>
+<form [formGroup] = "myForm">
+  value: {{myForm.value | json}}
+
+  <hr>
+  <mat-form-field>
+    <input matInput placeholder="name" formControlName="Name" color="accent">
+  Name</mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Email" formControlName="Email">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Contact" formControlName="Contact">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="password" formControlName="password">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="City" formControlName="City">
+  </mat-form-field>
+  <mat-form-field>
+    <input matInput placeholder="Gender" formControlName="Gender">
+  </mat-form-field>
+
+</form>

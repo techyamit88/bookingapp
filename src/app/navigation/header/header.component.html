@@ -1,15 +1,13 @@
-<mat-toolbar color="primary">
-  <div>
-    <button mat-icon-button (click)="onToggleOpenSidenav()">
-      <mat-icon></mat-icon>
-    </button>
+<mat-toolbar class="mat-elevation-z6">
+  <mat-icon color="">person_pin_circle</mat-icon>
+  <div class="spacer"></div>
+  <a mat-button routerLink="/Home">Home</a>
+  <a mat-button routerLink="/SignIn" routerLinkActive="active">Login</a>
+  <a mat-button routerLink="/SignUp" >Join</a>
+  <a mat-raised-button color="accent">BOOK</a>
+<div class="logo">
+  <div fxLayout="column" fxLayoutAlign="right right">
+<img class=logo-style src="assets/images/bookmytaxi-logos.jpeg">
   </div>
-  <div class = "logo-container">
-    <div fxLayout="column" fxLayoutAlign="center center">
-
-    <img class="logo" src="assets/images/logo3.jpg">
-
-    </div>
-
-  </div>
+</div>
 </mat-toolbar>
