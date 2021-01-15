@@ -40,6 +40,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
       MatTooltipModule,
       MatTableModule,
       MatPaginatorModule
+
    ],
    exports: [
       MatButtonModule,

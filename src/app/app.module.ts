@@ -6,9 +6,9 @@ import {MatButtonModule} from '@angular/material/button';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCard, MatCardModule} from '@angular/material/card';
 import { AngularMaterialModule } from './material.module';
-
-
-
+import {MatFormFieldModule} from '@angular/material/form-field';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import {MatNativeDateModule} from '@angular/material/core';
 
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -18,16 +18,14 @@ import { LifestyleComponent } from './Lifestyle/Lifestyle.component';
 import { WeddingsComponent } from './Weddings/Weddings.component';
 import { CelebrationsComponent } from './Celebrations/Celebrations.component';
 import { OffersComponent } from './Offers/Offers.component';
-import { AuthComponent } from './Auth/Auth.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HomeComponent } from './Home/Home.component';
 import { HeaderComponent } from './navigation/header/header.component';
 import { SidenavListComponent } from './navigation/sidenav-list/sidenav-list.component';
 import { NavtabsComponent } from './navigation/navtabs/navtabs.component';
-import {FormsModule, ReactiveFormsModule} from '@angular/forms';
-import {MatNativeDateModule} from '@angular/material/core';
-import {SignInComponent} from './Auth/SignIn/SignIn.component';
-import {SignUpComponent} from './Auth/SignUp/SignUp.component';
+import {RegisterComponent} from './user/Register/Register.component';
+import {LoginComponent} from './user/Login/Login.component';
+import {UserServiceService} from './Shared/user-service.service';
 
 
 @NgModule({
@@ -39,13 +37,13 @@ import {SignUpComponent} from './Auth/SignUp/SignUp.component';
       WeddingsComponent,
       CelebrationsComponent,
       OffersComponent,
-      AuthComponent,
       HomeComponent,
       HeaderComponent,
       SidenavListComponent,
       NavtabsComponent,
-      SignInComponent,
-      SignUpComponent
+      LoginComponent,
+      RegisterComponent,
+
    ],
   imports: [
     BrowserModule,
@@ -58,10 +56,11 @@ import {SignUpComponent} from './Auth/SignUp/SignUp.component';
     MatButtonModule,
     MatIconModule,
     MatCardModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    MatFormFieldModule
 
   ],
-  providers: [],
+  providers: [UserServiceService],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA]
 
